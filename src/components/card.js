@@ -9,6 +9,16 @@ const Card = (article) => {
   const cardImg = document.createElement('img');
   const cardAuthor = document.createElement('span');
 
+  //<div class="card">
+  //   <div class="headline">{ headline }</div>
+  //   <div class="author">
+  //     <div class="img-container">
+  //       <img src={ authorPhoto }>
+  //     </div>
+  //     <span>By { authorName }</span>
+  //   </div>
+  // </div>
+
   card.appendChild(cardHeadline);
   card.appendChild(cardAuthorCon);
   cardAuthorCon.appendChild(cardImgCon);
@@ -21,13 +31,15 @@ const Card = (article) => {
   cardImgCon.classList.add('img-container');
 
   cardHeadline.textContent = article.headline;
-  cardAuthorCon.textContent = article.authorName;
   cardImg.src = article.authorPhoto;
-  cardAuthor.textContent = `By ${article.authorName}`;
+  cardAuthor.textContent = article.authorName;
+
+  card.addEventListener('click', event => {
+    console.log(article.headline);
+  });
 
   return card;
 
-  // console.log(card);
 } 
 
 // console.log(Card);
@@ -54,13 +66,7 @@ const Card = (article) => {
 const cardAppender = (selector) => {
   axios.get(`http://localhost:5000/api/articles`).then(res => {
     console.log(res.data);
-    
-    // const artList = res.data.articles;
-    // console.log(artList);
-
-    res.data.articles.forEach(function(value, index, array) {
-      console.log('Hiii');
-    });
+       
         
       // document.querySelector(selector).appendChild(bootstrap, javascript, jquery, node, technology);
 })

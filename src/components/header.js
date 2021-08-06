@@ -1,4 +1,26 @@
+import { EntryOptionPlugin } from "webpack";
+
 const Header = (title, date, temp) => {
+
+  const header = document.createElement('div');
+  const headDate = document.createElement('span');
+  const headTitle = document.createElement('h1');
+  const headTemp = document.createElement('span');
+
+  header.appendChild(headDate);
+  header.appendChild(headTitle);
+  header.appendChild(headTemp);
+
+  header.classList.add('header');
+  headDate.classList.add('date');
+  headTemp.classList.add('temp');
+
+  headDate.textContent = date;
+  headTitle.textContent = title;
+  headTemp.textContent = temp;
+
+  return header;
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -13,7 +35,10 @@ const Header = (title, date, temp) => {
   //
 }
 
+
 const headerAppender = (selector) => {
+  
+
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
@@ -23,3 +48,4 @@ const headerAppender = (selector) => {
 }
 
 export { Header, headerAppender }
+

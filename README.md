@@ -31,11 +31,11 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ### Instructions
 
-- [ ] Navigate to the root of the project with your command line.
-- [ ] Run `npm install` to download the dependencies listed in the `package.json` file.
-- [ ] Run `npm start` to compile the project and serve it.
-- [ ] Navigate Chrome to `http://localhost:3000`
-- [ ] In a separate terminal, run `npm test` to run tests.
+- [1] Navigate to the root of the project with your command line.
+- [1] Run `npm install` to download the dependencies listed in the `package.json` file.
+- [1] Run `npm start` to compile the project and serve it.
+- [1] Navigate Chrome to `http://localhost:3000`
+- [1] In a separate terminal, run `npm test` to run tests.
 
 **Steps Required for MVP:**
 

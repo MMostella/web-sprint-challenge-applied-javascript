@@ -1,4 +1,4 @@
-import { EntryOptionPlugin } from "webpack";
+// import { EntryOptionPlugin } from "webpack";
 
 const Header = (title, date, temp) => {
 
@@ -18,8 +18,11 @@ const Header = (title, date, temp) => {
   headDate.textContent = date;
   headTitle.textContent = title;
   headTemp.textContent = temp;
-
+  console.log(header);
   return header;
+}
+
+  // console.log(Header);
 
   // TASK 1
   // ---------------------
@@ -33,19 +36,24 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
-}
 
+// const headerEntry = document.querySelector('.header-container');
 
 const headerAppender = (selector) => {
   
+  const newHeader = Header('Lambda Coding Program', 'Aug 8, 2021', '90 Degrees');
+    document.querySelector(selector).appendChild(newHeader);
+
+}
 
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
+
   // It should create a header using the Header component above, passing arguments of your choosing.
+
   // It should append the header to the element in the DOM that matches the given selector.
   //
-}
 
 export { Header, headerAppender }
 

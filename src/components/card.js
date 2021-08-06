@@ -9,16 +9,6 @@ const Card = (article) => {
   const cardImg = document.createElement('img');
   const cardAuthor = document.createElement('span');
 
-  //<div class="card">
-  //   <div class="headline">{ headline }</div>
-  //   <div class="author">
-  //     <div class="img-container">
-  //       <img src={ authorPhoto }>
-  //     </div>
-  //     <span>By { authorName }</span>
-  //   </div>
-  // </div>
-
   card.appendChild(cardHeadline);
   card.appendChild(cardAuthorCon);
   cardAuthorCon.appendChild(cardImgCon);
@@ -64,11 +54,33 @@ const Card = (article) => {
   //
 
 const cardAppender = (selector) => {
+  const cardEntry = document.querySelector(selector);
   axios.get(`http://localhost:5000/api/articles`).then(res => {
-    console.log(res.data);
-       
+    // console.log(res.data.articles);
+
+  // Attempt 3
+
+      // const artList = res.data.articles;
+      // console.log(artList);
+
+      // cardEntry.appendChild(artList[0]);
+
+  // Attempt 4
+      // const bootstrap = artList.bootstrap;
+      // const javascript = artList.javascript;
+      // const jquery = artList.jquery;
+      // const node = artList.node;
+      // const technology = artList.technology;
+      // console.log(bootstrap[0]);
+
+      // const array = [bootstrap, javascript, jquery, node, technology];
+      // console.log(array);
         
-      // document.querySelector(selector).appendChild(bootstrap, javascript, jquery, node, technology);
+      // for(let i = 0; i < array.length; i++){
+
+      // } 
+
+      cardEntry.appendChild(artList[0]);
 })
   .catch(err => {
     console.error(err);
@@ -81,6 +93,7 @@ const cardAppender = (selector) => {
   // Implement this function that takes a css selector as its only argument.
   // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
   // However, the articles do not come organized in a single, neat array. Inspect the response closely!
+
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //

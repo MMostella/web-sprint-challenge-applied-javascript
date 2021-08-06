@@ -52,17 +52,21 @@ const Card = (article) => {
   //
 
 const cardAppender = (selector) => {
-
-//   axios.get(`http://localhost:5000/api/articles`).then(res => {
-//     // console.log(res.data.articles);
-//     const artList = res.data.articles;
-//     console.log(artList);
+  axios.get(`http://localhost:5000/api/articles`).then(res => {
+    console.log(res.data);
     
-//       document.querySelector(selector).appendChild(artList);
-// })
-//   .catch(err => {
-//     console.error(err);
-//   })
+    // const artList = res.data.articles;
+    // console.log(artList);
+
+    res.data.articles.forEach(function(value, index, array) {
+      console.log('Hiii');
+    });
+        
+      // document.querySelector(selector).appendChild(bootstrap, javascript, jquery, node, technology);
+})
+  .catch(err => {
+    console.error(err);
+  })
 
 }
 

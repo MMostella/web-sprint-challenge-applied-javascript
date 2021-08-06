@@ -18,7 +18,7 @@ const Header = (title, date, temp) => {
   headDate.textContent = date;
   headTitle.textContent = title;
   headTemp.textContent = temp;
-  console.log(header);
+
   return header;
 }
 
@@ -45,6 +45,7 @@ const headerAppender = (selector) => {
     document.querySelector(selector).appendChild(newHeader);
 
 }
+
 
   // TASK 2
   // ---------------------

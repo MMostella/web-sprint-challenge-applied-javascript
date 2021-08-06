@@ -11,11 +11,11 @@ You are not allowed to collaborate during the sprint challenge.
 
 ## Project Set Up
 
-- [ ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
-- [ ] Open the assignment in Canvas and click on the "Set up git" option.
-- [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
-- [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
-- [ ] Check to see that Codegrade has accepted your git submission.
+- [1] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
+- [1] Open the assignment in Canvas and click on the "Set up git" option.
+- [1] Follow instructions to set up Codegrade's Webhook and Deploy Key.
+- [1] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
+- [1] Check to see that Codegrade has accepted your git submission.
 
 For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
 
@@ -54,19 +54,24 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes.
-- [ ] Create a pull request to merge `<firstName-lastName>` branch into `main`.
-- [ ] Please don't merge your own pull request and make sure **you are on your own repo**.
-- [ ] Check Codegrade for automated feedback.
-- [ ] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
-- [ ] Any changes pushed after the deadline will not receive any feedback.
+- [1] Submit via Codegrade by committing and pushing any new changes.
+- [1] Create a pull request to merge `<firstName-lastName>` branch into `main`.
+- [1] Please don't merge your own pull request and make sure **you are on your own repo**.
+- [1] Check Codegrade for automated feedback.
+- [1] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
+- [1] Any changes pushed after the deadline will not receive any feedback.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+- Document Object Module: Programming API for HTML. It defines the structure of documents and the way a document is accessed and manipulated
 2. What is an event?
+- An event allows JavaScript to register different handlers on elements in a HTML document.
 3. What is an event listener?
+- A function that can be called whenever the specific event happens to the target.
 4. Why would we convert a NodeList into an Array?
+- To give the list access to array based functions.
 5. What is a component?
+- Reusable chuncks of code.

@@ -54,9 +54,37 @@ const Card = (article) => {
   //
 
 const cardAppender = (selector) => {
-  const cardEntry = document.querySelector(selector);
+  // const cardEntry = document.querySelector(selector);
   axios.get(`http://localhost:5000/api/articles`).then(res => {
-    // console.log(res.data.articles);
+    console.log(res.data.articles);
+
+    const javaList = res.data.articles.javascript;
+    const bootList = res.data.articles.bootstrap;
+    const jquList = res.data.articles.jquery;
+    const nodeList = res.data.articles.node;
+    const techList = res.data.articles.technology;
+    console.log(javaList);
+
+    javaList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });
+    bootList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });
+    jquList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });
+    nodeList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });
+    techList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });    
 
   // Attempt 3
 
@@ -80,7 +108,7 @@ const cardAppender = (selector) => {
 
       // } 
 
-      cardEntry.appendChild(artList[0]);
+      // cardEntry.appendChild(artList[0]);
 })
   .catch(err => {
     console.error(err);

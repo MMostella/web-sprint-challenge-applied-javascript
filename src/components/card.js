@@ -1,4 +1,39 @@
+import axios from "axios";
+
 const Card = (article) => {
+
+  const card = document.createElement('div');
+  const cardHeadline = document.createElement('div');
+  const cardAuthorCon = document.createElement('div');
+  const cardImgCon = document.createElement('div');
+  const cardImg = document.createElement('img');
+  const cardAuthor = document.createElement('span');
+
+  card.appendChild(cardHeadline);
+  card.appendChild(cardAuthorCon);
+  cardAuthorCon.appendChild(cardImgCon);
+  cardAuthorCon.appendChild(cardAuthor);
+  cardImgCon.appendChild(cardImg);
+
+  card.classList.add('card');
+  cardHeadline.classList.add('headline');
+  cardAuthorCon.classList.add('author');
+  cardImgCon.classList.add('img-container');
+
+  cardHeadline.textContent = article.headline;
+  cardImg.src = article.authorPhoto;
+  cardAuthor.textContent = article.authorName;
+
+  card.addEventListener('click', event => {
+    console.log(article.headline);
+  });
+
+  return card;
+
+} 
+
+// console.log(Card);
+
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,17 +52,79 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
 
 const cardAppender = (selector) => {
+  // const cardEntry = document.querySelector(selector);
+  axios.get(`http://localhost:5000/api/articles`).then(res => {
+    console.log(res.data.articles);
+
+    const javaList = res.data.articles.javascript;
+    const bootList = res.data.articles.bootstrap;
+    const jquList = res.data.articles.jquery;
+    const nodeList = res.data.articles.node;
+    const techList = res.data.articles.technology;
+    console.log(javaList);
+
+    javaList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });
+    bootList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });
+    jquList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });
+    nodeList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });
+    techList.forEach(item => {
+      const test = Card(item);
+      document.querySelector(selector).appendChild(test);
+    });    
+
+  // Attempt 3
+
+      // const artList = res.data.articles;
+      // console.log(artList);
+
+      // cardEntry.appendChild(artList[0]);
+
+  // Attempt 4
+      // const bootstrap = artList.bootstrap;
+      // const javascript = artList.javascript;
+      // const jquery = artList.jquery;
+      // const node = artList.node;
+      // const technology = artList.technology;
+      // console.log(bootstrap[0]);
+
+      // const array = [bootstrap, javascript, jquery, node, technology];
+      // console.log(array);
+        
+      // for(let i = 0; i < array.length; i++){
+
+      // } 
+
+      // cardEntry.appendChild(artList[0]);
+})
+  .catch(err => {
+    console.error(err);
+  })
+
+}
+
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
   // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
   // However, the articles do not come organized in a single, neat array. Inspect the response closely!
+
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+
 
 export { Card, cardAppender }
